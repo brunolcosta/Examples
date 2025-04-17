@@ -1,1 +1,1 @@
-# Examples-NextJS-FE-auth-01
+# Examples NextJS
