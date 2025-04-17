@@ -11,13 +11,16 @@ const testUser = {
 };
 
 export async function authorizeUser(credentials: Credentials) {
-  if (
+
+  const validUser = (
     credentials?.email === testUser.email &&
     credentials?.password === testUser.password
-  ) {
-    // Nunca retorne a senha!
-    const { password, ...userWithoutPassword } = testUser;
-    return userWithoutPassword;
+  );
+  
+  if (!validUser) {
+    throw new Error("Invalid credentials.")
   }
-  return null;
+  // Nunca retorne a senha!
+  const { password, ...userWithoutPassword } = testUser;
+  return userWithoutPassword;
 }

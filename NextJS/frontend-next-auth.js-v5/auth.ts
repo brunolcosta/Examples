@@ -13,8 +13,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       async authorize(credentials) {
         if (credentials) {
           return await authorizeUser(credentials as { email: string; password: string });
-        }
-        return null;
+        } 
+        return null;        
       },
     }),
   ],
