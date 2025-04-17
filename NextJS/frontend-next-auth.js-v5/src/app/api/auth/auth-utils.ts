@@ -10,7 +10,7 @@ const testUser = {
   password: "12345678",
 };
 
-export function authorizeUser(credentials: Credentials) {
+export async function authorizeUser(credentials: Credentials) {
   if (
     credentials?.email === testUser.email &&
     credentials?.password === testUser.password
